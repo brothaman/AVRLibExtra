@@ -26,8 +26,9 @@ class GPIOPin
         /* GPIO BEHAVIOR */
         void toggle(void);
 
-        /* PIN CONFIG */
+        /* PIN READ/WRITE */
         void pinIOWrite(uint8_t _state);
+        uint8_t pinIORead(void);
 
         /* SETTERS */
         void setMode(uint8_t _mode);
@@ -51,4 +52,6 @@ class GPIOPin
 
 };
 
+// TODO: add methods to attach interrupts
+// TODO: add support for adcs and dacs
 #endif // GPIO_HH

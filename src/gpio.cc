@@ -92,6 +92,7 @@ void GPIOPin::toggle(void)
  */
 void GPIOPin::pinIOWrite(uint8_t _state)
 {
+        assert(this->mode == OUTPUT);
 		assert(_state == ON || _state == OFF);
 		this->state = _state;
 
@@ -103,4 +104,16 @@ void GPIOPin::pinIOWrite(uint8_t _state)
 		{
 				*this->port |= (1 << this->pin);
 		}
+}
+
+/**
+ * pinIORead
+ *
+ * Reads the value of the pin
+ */
+uint8_t GPIOPin::pinIORead(void)
+{
+        assert(this->mode == INPUT);
+        return (*this->port & (1 << this->pin));
+
 }
