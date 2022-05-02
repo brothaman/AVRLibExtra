@@ -10,7 +10,8 @@
 class BaseSerial
 {
     public:
-        void setBaud(short int _baud);
+        void init(uint16_t _baud);
+        void setBaud(uint16_t _baud);
         short int getBaud(void);
 
     private:
@@ -33,7 +34,7 @@ class BaseSerial
         volatile uint8_t * udr;
 
         /* BAUDRATE */
-        short int baud;
+        uint16_t baud;
 
 } Serial0, Serial1, Serial2;
 // CLASS FOR EACH SERIAL PORT
