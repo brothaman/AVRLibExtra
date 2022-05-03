@@ -13,6 +13,13 @@ class BaseSerial
         void init(uint16_t _baud);
         void setBaud(uint16_t _baud);
         short int getBaud(void);
+        void printConfig(void);
+        void send(uint8_t byte);
+        int send(char * byte_array, int len);
+        void readBuffer(char * c);
+        int readBufferUntil(char c, char * buffer, int len);
+        void loadBuffer(char c);
+        int loadBuffer(char * buffer, int len);
 
     private:
         /* UART baud rate register high */
